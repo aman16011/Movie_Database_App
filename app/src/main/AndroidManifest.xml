@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.movie_database_app">
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,6 +29,18 @@
         </activity>
         <activity android:name=".activity.MovieSearchActivity" />
         <activity android:name=".activity.BookMarkedMovieActivity" />
+        <activity android:name=".activity.DeepLinkActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:host="mytmd.io"
+                    android:pathPrefix="/share"
+                    android:scheme="http"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

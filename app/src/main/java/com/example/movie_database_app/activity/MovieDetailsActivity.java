@@ -24,6 +24,8 @@ import com.google.gson.GsonBuilder;
 
 import java.util.List;
 
+
+
 public class MovieDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
     private String TAG="MovieDetailsActivity";
@@ -33,7 +35,7 @@ public class MovieDetailsActivity extends AppCompatActivity implements View.OnCl
     private MovieDetailViewModel movieDetailViewModel;
     private MovieDetailResponse movieDetail;
     private MovieViewModel movieViewModel;
-    private TextView originalTitle, budget, releaseDate, tagLine, status, vote, revenue, home_button, bookmark_button, title;
+    private TextView originalTitle, budget, releaseDate, tagLine, status, vote, revenue, home_button, bookmark_button,share_button, title;
     private TextView adult;
     @Override
     public void onCreate(Bundle saveInstanceState) {
@@ -79,6 +81,8 @@ public class MovieDetailsActivity extends AppCompatActivity implements View.OnCl
         vote = findViewById(R.id.vote);
         revenue = findViewById(R.id.revenue);
         home_button = findViewById(R.id.home_button);
+        share_button = findViewById(R.id.share_button);
+        share_button.setOnClickListener(this);
         bookmark_button = findViewById(R.id.bookmark_button);
         home_button.setOnClickListener(this);
         title = findViewById(R.id.title);
@@ -114,6 +118,13 @@ public class MovieDetailsActivity extends AppCompatActivity implements View.OnCl
         if (view == home_button) {
             Intent intent = new Intent(this,HomeActivity.class);
             startActivity(intent);
+        } else if(view == share_button) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_SUBJECT,"Deep Link URL");
+            String url = Constants.DEEPLINK_BASE_URL + "?id="+movieId;
+            intent.putExtra(Intent.EXTRA_TEXT,url);
+            startActivity(Intent.createChooser(intent,"Share Text"));
         } else {
             Gson gson = new Gson();
             String jsonString = "";

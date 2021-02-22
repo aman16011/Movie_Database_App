@@ -10,4 +10,6 @@ public class Constants {
     public static final String UNBOOKMARK = "UnBookmark";
     public static final String YES = "YES";
     public static  final String NO = "NO";
+    public static final String ID = "id";
+    public static final String DEEPLINK_BASE_URL = "http://mytmd.io/share";
 }
