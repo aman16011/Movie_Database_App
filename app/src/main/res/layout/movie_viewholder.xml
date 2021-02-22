@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:background="@drawable/ic_rounded_rectangle">
+
+    <TextView
+        android:id="@+id/title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:text="Hi Aman Roy"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/info_bar"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/adult"
+            android:textSize="14dp"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"
+            android:gravity="left"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="Yes">
+        </TextView>
+
+        <TextView
+            android:id="@+id/release_date"
+            android:layout_marginStart="45dp"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="21/01/1999">
+        </TextView>
+
+        <TextView
+            android:id="@+id/vote_count"
+            android:layout_marginStart="45dp"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2445">
+        </TextView>
+
+        <TextView
+            android:id="@+id/popularity"
+            android:layout_marginStart="45dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:text="Popularity"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/info_bar_text"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/adult_field"
+            android:layout_marginStart="5dp"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:layout_height="32dp"
+            android:text="Adult">
+        </TextView>
+
+        <TextView
+            android:id="@+id/release_date_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:gravity="center"
+            android:text="Release Date"
+            android:textSize="14dp"></TextView>
+
+        <TextView
+            android:layout_marginStart="40dp"
+            android:textSize="14dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vote">
+        </TextView>
+
+        <TextView
+            android:id="@+id/popularity_container"
+            android:layout_marginStart="45dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:text="Popularity">
+        </TextView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
